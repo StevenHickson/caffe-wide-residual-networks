@@ -6,7 +6,7 @@ import caffe
 
 def conv_factory(bottom, ks, n_out, stride=1, pad=0):
     conv = L.Convolution(bottom, kernel_size=ks, stride=stride, num_output=n_out, pad=pad,
-                         bias_filler=dict(type='constant', value=0), weight_filler=dict(type='msr'))
+                         bias_filler=dict(type='constant', value=0), weight_filler=dict(type='msra'))
     return conv
 
 def residual_block(bottom, num_filters, stride=1, diffInputOutput=False):
